@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { setCurrentUser } from "./redux/user/user.action";
-import { SelectCurrentUser } from "../src/redux/user/user.selector";
+import { SelectCurrentUser } from "./redux/user/user.selector";
 
 import "./App.css";
 import Header from "./components/header/header.component";
@@ -12,7 +12,10 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+  auth,
+  createUserProfileDocument,
+} from "./firebase/firebase.utils";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -32,6 +35,11 @@ class App extends React.Component {
         });
       } else {
         setCurrentUser(userAuth);
+        //Only execute once to add collections to firebase
+        // addCollectionsAndDocuments(
+        //   "collections",
+        //   collectionsArray.map(({ title, items }) => ({ title, items }))
+        // );
       }
     });
   }
