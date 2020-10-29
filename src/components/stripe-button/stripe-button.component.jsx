@@ -27,4 +27,6 @@ const StripeCheckoutButton = ({ price }) => {
   );
 };
 
+//Test Card 4242 4242 4242 4242 - Expired Date 01/20 - CW: 123
+
 export default StripeCheckoutButton;
