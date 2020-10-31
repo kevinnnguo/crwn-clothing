@@ -10,6 +10,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return { ...state, hidden: !state.hidden };
+    case CartActionTypes.CLEAR_CART:
+      return {
+        ...state,
+        cartItems: []
+      }
     case CartActionTypes.ADD_ITEM:
       return {
         ...state,
