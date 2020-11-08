@@ -6,7 +6,7 @@ import { createStructuredSelector } from "reselect";
 import { SelectCurrentUser } from "./redux/user/user.selector";
 import { checkUserSession } from "./redux/user/user.action";
 
-import "./App.css";
+import {GlobalStyle} from './global.styles'
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
@@ -22,6 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
